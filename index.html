@@ -571,7 +571,7 @@
       <input id="usernameLoginInput" type="text" placeholder="یوزرنیم" maxlength="20" autocomplete="off">
       <button class="submit-btn" id="usernameLoginBtn">ورود</button>
       <div class="login-error" id="usernameLoginError"></div>
-      <p class="switch-link" id="backToSignupBtn">بازگشت به فرم ثبت‌نام</p>
+      <p class="switch-link" id="backToSignupBtn">یوزرنیم نداری؟ همین حالا ثبت‌نام کن</p>
     </div>
   </div>
 
@@ -893,9 +893,13 @@ function showWelcomeBackOrForm(){
   if (saved && saved.name){
     welcomeBackName.textContent = 'با یوزرنیم «' + saved.username + '» (' + saved.name + ') وارد اتاق «' + selectedRoom.name + '» شو';
     loginScreen.style.display = 'none';
+    usernameLoginScreen.style.display = 'none';
     welcomeBackScreen.style.display = 'flex';
   } else {
-    loginScreen.style.display = 'flex';
+    loginScreen.style.display = 'none';
+    welcomeBackScreen.style.display = 'none';
+    usernameLoginScreen.style.display = 'flex';
+    usernameLoginError.textContent = '';
   }
 }
 
